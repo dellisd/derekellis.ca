@@ -12,6 +12,7 @@ $horizontal-padding: 15%;
 html {
   font-family: $font-stack;
   color: #212121;
+  background: #FAFAFA;
 }
 
 header {
@@ -66,4 +67,16 @@ header {
       color: $primary-color;
     }
   }
+}
+
+.header-card {
+  box-shadow: 0 0 134px 0 rgba(33,33,33,0.1);
+  width: 100% - 2 * $horizontal-padding;
+  position:absolute;
+  top: 256px;
+  left: $horizontal-padding;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 2px;
 }
