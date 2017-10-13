@@ -34,18 +34,36 @@ header {
 
     ul li {
       float: left;
-      padding: 8px 16px;
+      padding: 8px 32px;
       height: 36px;
       line-height: 36px;
       font-size: 20px;
       cursor: pointer;
+      transition: color 0.2s;
+    }
 
-      transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    ul li::after {
+      border-bottom:1px solid $primary-color;
+      content: '';
+      width: 0;
+      display: block;
+      padding: 0;
+      margin-left:-8px;
+      margin-top: -2px;
+      transition: width 0.2s, padding 0.2s, border 0.2s;
+    }
+
+    ul li:hover::after {
+      width: 100%;
+      padding: 0 8px;
+    }
+
+    ul li:active::after {
+      border-bottom: 3px solid $primary-color;
     }
 
     ul li:hover {
-      background: $primary-color;
-      color: #FFFFFF;
+      color: $primary-color;
     }
   }
 }
