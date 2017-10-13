@@ -1,0 +1,51 @@
+@import 'reset';
+
+$primary-color: #538a1d;
+$font-stack: 'Lato', sans-serif;
+$horizontal-padding: 15%;
+
+::selection {
+  background: $primary-color;
+  color: #FFFFFF;
+}
+
+html {
+  font-family: $font-stack;
+  color: #212121;
+}
+
+header {
+  width: 100%;
+
+  h1 {
+    font-weight: 900;
+    color: $primary-color;
+    font-size: 64px;
+    position: absolute;
+    top: 128px;
+    left: $horizontal-padding;
+  }
+
+  nav {
+    position: absolute;
+    right: $horizontal-padding;
+    top: 78px;
+    height: 36px;
+
+    ul li {
+      float: left;
+      padding: 8px 16px;
+      height: 36px;
+      line-height: 36px;
+      font-size: 20px;
+      cursor: pointer;
+
+      transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    }
+
+    ul li:hover {
+      background: $primary-color;
+      color: #FFFFFF;
+    }
+  }
+}
