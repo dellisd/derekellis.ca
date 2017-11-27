@@ -1,8 +1,8 @@
 @import 'reset';
 
 $primary-color: #538a1d;
-$font-stack: 'Lato', sans-serif;
-$horizontal-padding: 15%;
+$font-stack: 'Quicksand', sans-serif;
+$horizontal-padding: 5%;
 
 ::selection {
   background: $primary-color;
@@ -15,22 +15,50 @@ html {
   background: #FAFAFA;
 }
 
+// Icons
+@font-face {
+  font-family: 'icon';
+  src: url('../fonts/icon.eot?rc2r9n');
+  src: url('../fonts/icon.eot?rc2r9n#iefix') format('embedded-opentype'),
+  url('../fonts/icon.ttf?rc2r9n') format('truetype'),
+  url('../fonts/icon.woff?rc2r9n') format('woff'),
+  url('../fonts/icon.svg?rc2r9n#icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  font-family: icon, 'Lato', sans-serif;
+}
+
+// Link stuff
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: text-color 0.2s;
+}
+
+a:hover {
+  color: $primary-color;
+}
+
+// Header stuff
 header {
   width: 100%;
 
   h1 {
     font-weight: 900;
     color: $primary-color;
-    font-size: 64px;
+    font-size: 48px;
     position: absolute;
-    top: 128px;
+    top: 5vw;
     left: $horizontal-padding;
   }
 
   nav {
     position: absolute;
     right: $horizontal-padding;
-    top: 78px;
+    top: 5vw;
     height: 36px;
 
     ul li {
@@ -44,12 +72,12 @@ header {
     }
 
     ul li::after {
-      border-bottom:1px solid $primary-color;
+      border-bottom: 1px solid $primary-color;
       content: '';
       width: 0;
       display: block;
       padding: 0;
-      margin-left:-8px;
+      margin-left: -8px;
       margin-top: -2px;
       transition: width 0.2s, padding 0.2s, border 0.2s;
     }
@@ -70,13 +98,47 @@ header {
 }
 
 .header-card {
-  box-shadow: 0 0 134px 0 rgba(33,33,33,0.1);
+  box-shadow: 0 0 134px 0 rgba(33, 33, 33, 0.1);
   width: 100% - 2 * $horizontal-padding;
-  position:absolute;
+  position: absolute;
   top: 256px;
   left: $horizontal-padding;
   background: #FFFFFF;
   box-sizing: border-box;
   padding: 24px;
   border-radius: 2px;
+}
+
+// Footer stuff
+footer {
+  width: 100%;
+  height: 36px;
+  position: fixed;
+  bottom: 2vw;
+  padding: 0 5%;
+
+  .col {
+    width: 50% - 5%;
+    float: left;
+  }
+
+  .icon {
+    @extend .icon;
+    @extend .social;
+    font-size: 20px;
+  }
+
+  .social {
+    float: right;
+    margin: 0 8px;
+    line-height: 20px;
+  }
+
+  .col.right {
+    text-align: right;
+  }
+
+  .col.left {
+    text-align: left;
+  }
 }
