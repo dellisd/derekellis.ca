@@ -1,7 +1,7 @@
 @import 'reset';
 
 $primary-color: #538a1d;
-$font-stack: 'Rubik', sans-serif;
+$font-stack: 'Nunito', sans-serif;
 $horizontal-padding: 5%;
 $swift-out-easing: cubic-bezier(.55,0,.1,1);
 
@@ -48,27 +48,63 @@ a:hover {
   color: $primary-color;
 }
 
+// Column stuff
+.column-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+  display: block;
+}
+
+.column-r {
+  width: 50%;
+  float: right;
+}
+
+.column-l {
+  width: 50%;
+  float: left;
+}
+
 // Header stuff
 header {
   width: 100%;
   position: relative;
-  height: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 64px 10vw;
+  box-sizing: border-box;
 
   h1 {
     font-weight: 900;
     color: $primary-color;
     font-size: 56px;
-    position: absolute;
     letter-spacing: 2px;
-    top: 48px;
     left: $horizontal-padding;
+    float: left;
+  }
+
+  h2 {
+    color: $primary-color;
+    font-size: 42px;
+    margin-bottom: 8px;
+  }
+
+  .column-r {
+    @extend .column-r;
+    margin: 56px 16px 16px 16px;
+    width: calc(50% - 32px);
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 32px;
   }
 
   nav {
-    position: absolute;
     right: $horizontal-padding;
-    top: 48px;
-    height: 36px;
+    float: right;
 
     ul li {
       float: left;
@@ -106,16 +142,20 @@ header {
   }
 }
 
+.header-title-row {
+  overflow: hidden;
+}
+
 .header-card {
   box-shadow: 0 0 134px 0 rgba(33, 33, 33, 0.1);
-  width: 100% - (10 * $horizontal-padding);
-  position: absolute;
-  top: 196px;
-  left: 5 * $horizontal-padding;
+  width: calc(50% - 32px);
+  position: relative;
   background: #FFFFFF;
   box-sizing: border-box;
   padding: 24px;
+  margin: 56px 16px 16px 16px;
   border-radius: 2px;
+  font-family: 'Roboto Mono', monospace;
 }
 
 // Footer stuff
